@@ -1,0 +1,3 @@
+[Hình: Sơ đồ khối hệ thống truyền tin số (Hình 1.2). Sơ đồ minh họa luồng dữ liệu từ Nguồn tin qua các khối chức năng ở phía phát (Định khuôn, Mã nguồn, Mã bảo mật, Mã kênh, Dồn kênh, Điều chế, Trải phổ, Đa truy nhập) tới Máy phát. Tín hiệu truyền qua Kênh có Nhiễu đến Máy thu. Phía thu thực hiện các bước ngược lại (Đa truy nhập, Ép phổ, Giải điều chế, Chia kênh, Giải mã kênh, Giải mã mật, Giải mã nguồn, Định khuôn) để đến Nhận tin. Sơ đồ cũng thể hiện các thành phần như Dòng bit, Hệ thống đồng bộ (Synchronization), Dạng sóng số, và tín hiệu $S_1(t)$. Có chú thích phân biệt giữa Khối cơ bản (hình chữ nhật gạch chéo) và Khối tùy chọn (hình chữ nhật trống).]
+
+**Hình 1.2. Sơ đồ khối hệ thống truyền tin số.**
