@@ -14,12 +14,7 @@ from ragas.embeddings import LangchainEmbeddingsWrapper
 import json
 from datasets import Dataset
 from ragas import evaluate
-from ragas.metrics import (
-    faithfulness,
-    answer_relevancy,
-    context_precision,
-    context_recall,
-)
+from ragas.metrics import Faithfulness, AnswerRelevancy, ContextPrecision, ContextRecall
 
 
 
@@ -86,18 +81,15 @@ def run_benchmark():
     hf_dataset = Dataset.from_dict(eval_dict)
 
     metrics = [
-        faithfulness,
-        answer_relevancy,
-        context_precision,
-        context_recall,
-
+        Faithfulness(llm=evaluator_llm),
+        AnswerRelevancy(llm=evaluator_llm, embeddings=evaluator_embeddings),
+        ContextPrecision(llm=evaluator_llm),
+        ContextRecall(llm=evaluator_llm),
     ]
 
     results = evaluate(
         dataset=hf_dataset,
         metrics=metrics,
-        llm=evaluator_llm,
-        embeddings=evaluator_embeddings,
     )
 
     output_excel = eval_dir/ "ragas_benchmark_report.xlsx"

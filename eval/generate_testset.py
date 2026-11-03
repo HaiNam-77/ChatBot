@@ -21,7 +21,7 @@ def generate_and_save():
     print("⏳ Đang tải embedding model...")
     embeddings = HuggingFaceEmbeddings(
         model_name=config.EMBEDDING_MODEL_NAME,
-        model_kwargs={'device': 'cuda'},
+        model_kwargs={'device': config.DEVICE},
         encode_kwargs={'normalize_embeddings': True}
     )
 
@@ -48,15 +48,16 @@ def generate_and_save():
     # Chạy thử 2-3 câu với mẫu tài liệu nhỏ trước để kiểm tra pipeline
     test_size = 3
     sample_docs = docs[:25] if len(docs) > 25 else docs
-
-    # base_transforms = default_transforms(
-    #     documents=sample_docs,
-    #     llm=generator.llm,
-    #     embedding_model=generator.embedding_model
-    # )
-
-    # Lọc bỏ HeadlineSplitter để tránh lỗi thiếu property headlines
-    filtered_transforms = []
+    base_transforms = default_transforms(
+        documents=sample_docs,
+        llm=generator.llm,
+        embedding_model=generator.embedding_model
+    )
+    # 2. Lọc bỏ Splitter gây lỗi bằng tên class (cực kỳ an toàn, không lo sai import)
+    filtered_transforms = [
+        t for t in base_transforms
+        if "Headline" not in t.__class__.__name__
+    ]
     run_config = RunConfig(
         max_workers=2,  # Giảm tải gửi request dồn dập
         timeout=60,
