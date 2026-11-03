@@ -16,7 +16,7 @@ SIGNATURE_FILE = os.path.join(INDEX_DIR, "index_signature.json")
 # Cấu hình Model
 EMBEDDING_MODEL_NAME = "BAAI/bge-m3"
 RERANKER_MODEL_NAME = "BAAI/bge-reranker-v2-m3"
-LLM_MODEL_NAME = "gemini-3-flash-preview"
+LLM_MODEL_NAME = "gemini-3.5-flash-lite"
 
 # Thiết bị thực thi (Tự động chọn CUDA nếu có, ngược lại dùng CPU)
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

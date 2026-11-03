@@ -13,7 +13,6 @@ class RAGService:
         self.llm = llm
         self.retriever = retriever
         self.rewrite_chain = self._build_rewrite_chain()
-        self.rag_chain = self._build_rag_chain()
         self.qa_prompt = ChatPromptTemplate.from_template(
             "Bạn là trợ lý tra cứu giáo trình Lý thuyết thông tin.\n"
             "QUY TẮC:\n"
@@ -25,6 +24,8 @@ class RAGService:
             "Ngữ cảnh:\n{context}\n\n"
             "Câu hỏi: {question}"
         )
+        self.rag_chain = self._build_rag_chain()
+
 
     def _build_rewrite_chain(self):
         rewrite_template = """Dựa vào Lịch sử trò chuyện bên dưới, hãy viết lại Câu hỏi mới của người dùng thành một câu hỏi hoàn chỉnh, độc lập và rõ nghĩa nhất.

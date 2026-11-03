@@ -1,6 +1,10 @@
 from pathlib import Path
 from langchain_huggingface import HuggingFaceEmbeddings
 from src import config
+import sys
+import langchain_google_vertexai
+sys.modules["langchain_community.chat_models.vertexai"] = langchain_google_vertexai
+
 from langchain_google_genai import ChatGoogleGenerativeAI
 from src.core.ingestion import load_or_build_vectorstore
 from src.core.retrieval import build_retriever_pipeline
@@ -10,11 +14,11 @@ from ragas.embeddings import LangchainEmbeddingsWrapper
 import json
 from datasets import Dataset
 from ragas import evaluate
-from ragas.metrics import(
-    Faithfulness,
-    AnswerRelevancy,
-    LLMContextPrecisionWithReference,
-    LLMContextRecall,
+from ragas.metrics import (
+    faithfulness,
+    answer_relevancy,
+    context_precision,
+    context_recall,
 )
 
 
@@ -57,7 +61,7 @@ def run_benchmark():
 
 
     for idx,item in enumerate(synthetic_data,start=1):
-        question = item.get("user_input") or item.get("questtion") or ""
+        question = item.get("user_input") or item.get("question") or ""
         reference = item.get("reference") or item.get("ground_truth") or ""
 
         if not question:
@@ -82,23 +86,23 @@ def run_benchmark():
     hf_dataset = Dataset.from_dict(eval_dict)
 
     metrics = [
-        Faithfulness(llm = evaluator_llm),
-        AnswerRelevancy(llm = evaluator_llm, embeddings = evaluator_embeddings),
-        LLMContextPrecisionWithReference(llm = evaluator_llm),
-        LLMContextRecall(llm = evaluator_llm),
+        faithfulness,
+        answer_relevancy,
+        context_precision,
+        context_recall,
 
     ]
 
     results = evaluate(
-        dataset= hf_dataset,
-        metrics = metrics,
-        llm = evaluator_llm,
-        embeddings = evaluator_embeddings,
+        dataset=hf_dataset,
+        metrics=metrics,
+        llm=evaluator_llm,
+        embeddings=evaluator_embeddings,
     )
 
     output_excel = eval_dir/ "ragas_benchmark_report.xlsx"
     results.to_pandas().to_excel(str(output_excel), index=False)
 
-    if __name__ == "__main__":
-        run_benchmark()
+if __name__ == "__main__":
+    run_benchmark()
 

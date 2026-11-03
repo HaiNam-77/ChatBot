@@ -4,10 +4,12 @@ import types
 from pathlib import Path
 import langchain_google_vertexai
 sys.modules["langchain_community.chat_models.vertexai"] = langchain_google_vertexai
-
+from ragas.run_config import RunConfig
 from langchain_huggingface import HuggingFaceEmbeddings
+from ragas.testset.transforms import default_transforms
 from langchain_google_genai import ChatGoogleGenerativeAI
 from ragas.llms import LangchainLLMWrapper
+from ragas.testset.synthesizers.single_hop.specific import SingleHopSpecificQuerySynthesizer
 from ragas.embeddings import LangchainEmbeddingsWrapper
 from ragas.testset import TestsetGenerator
 
@@ -35,22 +37,42 @@ def generate_and_save():
     print(f"📄 Tổng số chunk: {len(docs)}")
 
     # Bọc sang Wrapper tương thích với Ragas
-    generator_llm = LangchainLLMWrapper(llm)
-    generator_embeddings = LangchainEmbeddingsWrapper(embeddings)
+    # generator_llm = LangchainLLMWrapper(llm)
+    # generator_embeddings = LangchainEmbeddingsWrapper(embeddings)
 
     generator = TestsetGenerator.from_langchain(
-        llm=generator_llm,
-        embedding_model=generator_embeddings
+        llm=llm,
+        embedding_model=embeddings
     )
 
     # Chạy thử 2-3 câu với mẫu tài liệu nhỏ trước để kiểm tra pipeline
     test_size = 3
-    sample_docs = docs[:10] if len(docs) > 10 else docs
+    sample_docs = docs[:25] if len(docs) > 25 else docs
 
+    # base_transforms = default_transforms(
+    #     documents=sample_docs,
+    #     llm=generator.llm,
+    #     embedding_model=generator.embedding_model
+    # )
+
+    # Lọc bỏ HeadlineSplitter để tránh lỗi thiếu property headlines
+    filtered_transforms = []
+    run_config = RunConfig(
+        max_workers=2,  # Giảm tải gửi request dồn dập
+        timeout=60,
+        max_retries=3
+    )
+
+    query_distribution = [
+        (SingleHopSpecificQuerySynthesizer(llm=generator.llm), 1.0)
+    ]
     print(f"🚀 Bắt đầu sinh {test_size} câu hỏi...")
     dataset = generator.generate_with_langchain_docs(
         documents=sample_docs,
-        testset_size=test_size
+        testset_size=test_size,
+        transforms=filtered_transforms,
+        run_config = run_config,
+        query_distribution=query_distribution
     )
 
     current_dir = Path(__file__).resolve().parent
