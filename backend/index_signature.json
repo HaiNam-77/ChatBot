@@ -1,0 +1,10 @@
+{
+  "num_files": 48,
+  "total_size": 103668,
+  "chunk_size": 1000,
+  "chunk_overlap": 150,
+  "embed_model": "BAAI/bge-m3",
+  "method": "page_markers_v3",
+  "storage": "qdrant_cloud_hybrid",
+  "so_chunk": 111
+}

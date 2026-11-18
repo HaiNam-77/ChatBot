@@ -1,0 +1,152 @@
+[
+{
+"question": "Thông tin được định nghĩa như thế nào theo quan điểm của lý thuyết thông tin?",
+"ground_truth": "Thông tin là những tính chất xác định của vật chất mà con người hoặc hệ thống kỹ thuật nhận được từ thế giới vật chất bên ngoài hoặc từ những quá trình xảy ra trong bản thân nó.",
+"question_type": "factoid"
+},
+{
+"question": "Tin là gì? Cho ví dụ về tin.",
+"ground_truth": "Tin là dạng vật chất cụ thể để biểu diễn hoặc thể hiện thông tin, ví dụ như tấm ảnh, bản nhạc, bảng số liệu, bài nói.",
+"question_type": "factoid"
+},
+{
+"question": "Hãy phân biệt tín hiệu với quá trình vật lý.",
+"ground_truth": "Không phải bản thân quá trình vật lý là tín hiệu, mà sự biến đổi các tham số riêng của quá trình vật lý mới là tín hiệu.",
+"question_type": "factoid"
+},
+{
+"question": "Nếu tập tin là hữu hạn thì nguồn sinh ra nó được gọi là gì?",
+"ground_truth": "Nếu tập tin là hữu hạn thì nguồn sinh ra nó được gọi là nguồn rời rạc.",
+"question_type": "factoid"
+},
+{
+"question": "Nếu tập tin là vô hạn thì nguồn sinh ra nó được gọi là gì?",
+"ground_truth": "Nếu tập tin là vô hạn thì nguồn sinh ra nó được gọi là nguồn liên tục.",
+"question_type": "factoid"
+},
+{
+"question": "Thiết bị mã hóa trong máy phát có chức năng gì?",
+"ground_truth": "Thiết bị mã hoá làm ứng mỗi tin với một tổ hợp các ký hiệu đã chọn nhằm tăng mật độ, tăng khả năng chống nhiễu, tăng tốc độ truyền tin.",
+"question_type": "factoid"
+},
+{
+"question": "Kênh truyền tin là gì?",
+"ground_truth": "Kênh truyền tin là tập hợp các thiết bị kỹ thuật phục vụ cho việc truyền tin từ nguồn đến nơi nhận tin.",
+"question_type": "factoid"
+},
+{
+"question": "Hãy nêu định nghĩa của nhiễu.",
+"ground_truth": "Nhiễu là mọi yếu tố ngẫu nhiên có ảnh hưởng xấu đến việc thu tin, làm mất mát một phần hoặc toàn bộ thông tin.",
+"question_type": "factoid"
+},
+{
+"question": "Các dạng nhiễu được phân loại theo phương thức tác động lên tín hiệu như thế nào?",
+"ground_truth": "Phân loại theo phương thức tác động lên tín hiệu, nhiễu gồm nhiễu cộng và nhiễu nhân.",
+"question_type": "factoid"
+},
+{
+"question": "Định lý Parseval được dùng để tính đại lượng nào của tín hiệu?",
+"ground_truth": "Định lý Parseval được dùng để tính năng lượng của tín hiệu.",
+"question_type": "factoid"
+},
+{
+"question": "Bề rộng phổ công suất của một tín hiệu ngẫu nhiên đặc trưng cho điều gì?",
+"ground_truth": "Bề rộng phổ đặc trưng cho sự tập trung công suất (hoặc năng lượng) của tín hiệu ngẫu nhiên ở quanh một tần số trung tâm, và cũng đặc trưng cho sự bằng phẳng của phổ ở quanh tần số trung tâm.",
+"question_type": "factoid"
+},
+{
+"question": "Lượng thông tin là gì?",
+"ground_truth": "Lượng thông tin là mức độ bị thủ tiêu của độ bất định, được tính bằng độ chênh của độ bất định trước và sau khi nhận tin (độ bất định tiên nghiệm - độ bất định hậu nghiệm).",
+"question_type": "factoid"
+},
+{
+"question": "Đơn vị đo thông tin khi cơ số logarit là 2 được gọi là gì?",
+"ground_truth": "Đơn vị đo thông tin khi cơ số logarit là 2 được gọi là bit, hay đơn vị nhị phân.",
+"question_type": "factoid"
+},
+{
+"question": "Khả năng thông qua của kênh rời rạc là gì?",
+"ground_truth": "Khả năng thông qua của kênh rời rạc là giá trị cực đại của lượng thông tin truyền qua kênh trong một đơn vị thời gian, lấy theo mọi khả năng có thể có của nguồn tin A.",
+"question_type": "factoid"
+},
+{
+"question": "Khả năng thông qua của kênh Gausse với thời gian liên tục phụ thuộc vào những yếu tố nào?",
+"ground_truth": "Khả năng thông qua của kênh Gausse với thời gian liên tục phụ thuộc vào bề rộng phổ của tín hiệu (F) và tỷ số công suất tín hiệu trên nhiễu (Ps/Pn).",
+"question_type": "factoid"
+},
+{
+"question": "Mối quan hệ giữa 'độ bất định' và 'lượng thông tin' được giải thích như thế nào?",
+"ground_truth": "Độ bất định về một đối tượng càng lớn, khi nhận được thông tin làm giảm độ bất định đó, lượng thông tin mang lại càng lớn. Lượng thông tin chính là mức độ bị thủ tiêu của độ bất định, được tính bằng sự chênh lệch giữa độ bất định trước và sau khi nhận tin.",
+"question_type": "reasoning"
+},
+{
+"question": "So sánh giữa nhiễu cộng và nhiễu nhân về mặt toán học.",
+"ground_truth": "Nhiễu cộng được biểu diễn bằng phép cộng vào tín hiệu: u(t) = s(t) + n(t). Nhiễu nhân được biểu diễn bằng phép nhân với tín hiệu: u(t) = μ(t)s(t), và thường gây ra hiện tượng fading.",
+"question_type": "reasoning"
+},
+{
+"question": "Tại sao không thể sử dụng biến đổi Fourier thông thường để xây dựng đặc trưng vật lý cho tín hiệu ngẫu nhiên? Thay vào đó người ta sử dụng phương pháp nào?",
+"ground_truth": "Không thể sử dụng biến đổi Fourier trực tiếp vì tập các thể hiện của quá trình ngẫu nhiên thường là vô hạn và nếu là quá trình dừng thì nó không khả tích tuyệt đối. Thay vào đó, người ta sử dụng biến đổi Wiener - Khinchin để tính mật độ phổ công suất dựa trên hàm tự tương quan.",
+"question_type": "reasoning"
+},
+{
+"question": "Sự khác biệt giữa kênh rời rạc đồng nhất và kênh rời rạc không nhớ là gì?",
+"ground_truth": "Kênh rời rạc đồng nhất là kênh có xác suất chuyển p(bj/ai) không phụ thuộc vào thời gian (t), trong khi kênh không nhớ là kênh có xác suất chuyển không phụ thuộc vào dấu đã phát trước nó.",
+"question_type": "reasoning"
+},
+{
+"question": "Thế nào là kênh bị đứt và khi đó lượng thông tin chéo trung bình I(A,B) bằng bao nhiêu?",
+"ground_truth": "Kênh bị đứt (hoặc bị nhiễu tuyệt đối) là khi các tin thu được hoàn toàn độc lập với các tin phát đi. Khi đó I(A,B) = 0.",
+"question_type": "reasoning"
+},
+{
+"question": "Tại sao entropy của một nguồn liên tục lại lớn vô hạn?",
+"ground_truth": "Nguồn liên tục có vô số các giá trị có thể nhận. Nếu không có nhiễu, ta có thể chia khoảng giá trị thành các bước lượng tử nhỏ tuỳ ý, số lượng tin có thể truyền đi sẽ lớn vô hạn, kéo theo entropy (lượng thông tin trung bình) tiến tới vô hạn.",
+"question_type": "reasoning"
+},
+{
+"question": "Giải thích ý nghĩa của định lý mã hóa thứ nhất của Shannon (đối với mã nhị phân).",
+"ground_truth": "Định lý khẳng định rằng có thể xây dựng phép mã hóa hiệu quả sao cho độ dài trung bình của từ mã nhỏ tùy ý, nhưng không bao giờ nhỏ hơn entropy của nguồn tin. Việc mã hóa tối ưu cần gán các từ mã ngắn cho các tin xuất hiện nhiều và từ mã dài cho các tin xuất hiện ít.",
+"question_type": "reasoning"
+},
+{
+"question": "Định lý mã hoá thứ hai của Shannon (đối với kênh liên tục) cho biết điều kiện gì để có thể truyền tin với xác suất lỗi bé tuỳ ý?",
+"ground_truth": "Định lý khẳng định rằng nếu khả năng phát của nguồn nhỏ hơn khả năng thông qua của kênh thì có thể truyền tin với xác suất lỗi bé tùy ý. Ngược lại, nếu khả năng phát lớn hơn khả năng thông qua thì không thể.",
+"question_type": "reasoning"
+},
+{
+"question": "Trong thuật toán mã hóa Huffman, làm thế nào để đảm bảo tính giải mã tức thì?",
+"ground_truth": "Thuật toán Huffman xây dựng mã từ dưới lên dựa trên cây nhị phân, trong đó mã số của mỗi tin là dãy bit trên đường đi từ gốc đến nút lá. Cách xây dựng này đảm bảo không có từ mã nào là tiền tố (prefix) của một từ mã khác, do đó đảm bảo khả năng giải mã tức thì.",
+"question_type": "reasoning"
+},
+{
+"question": "Phân tích ý nghĩa của 'tính hữu hiệu' và 'độ tin cậy' trong hệ thống truyền tin. Có mâu thuẫn gì giữa hai chỉ tiêu này?",
+"ground_truth": "Tính hữu hiệu thể hiện ở tốc độ truyền cao, khả năng truyền nhiều tin và chi phí thấp. Độ tin cậy thể hiện ở độ chính xác cao, xác suất thu sai thấp. Hai chỉ tiêu này thường mâu thuẫn nhau: để tăng độ tin cậy thường phải giảm tốc độ hoặc thêm thông tin thừa (giảm tính hữu hiệu).",
+"question_type": "reasoning"
+},
+{
+"question": "Thuật toán mã hóa RSA được sử dụng như thế nào trong hệ thống truyền tin số?",
+"ground_truth": "Tài liệu có nhắc đến thuật toán RSA trong sơ đồ các phương pháp biến đổi thông tin ở phần Mã bảo mật, nhưng không giải thích chi tiết về cách hoạt động của nó.",
+"question_type": "unanswerable"
+},
+{
+"question": "Ưu điểm của mã Turbo so với mã LDPC trong các hệ thống viễn thông hiện đại là gì?",
+"ground_truth": "Tài liệu có giới thiệu về mã Turbo, nhưng không đề cập hay so sánh với mã LDPC.",
+"question_type": "unanswerable"
+},
+{
+"question": "Giao thức TCP/IP đóng vai trò gì trong việc định khuôn dữ liệu trước khi mã hóa?",
+"ground_truth": "Tài liệu không đề cập đến giao thức TCP/IP hay vai trò của nó trong quá trình định khuôn dữ liệu.",
+"question_type": "unanswerable"
+},
+{
+"question": "Các kỹ thuật điều chế QAM (Quadrature Amplitude Modulation) được mô tả chi tiết như thế nào trong chương 1?",
+"ground_truth": "Tài liệu liệt kê một số phương pháp điều chế như PSK, FSK, ASK trong Hình 1.3, nhưng không đề cập chi tiết đến QAM.",
+"question_type": "unanswerable"
+},
+{
+"question": "Chi phí cụ thể (bằng VNĐ) để xây dựng một hệ thống viễn thông sử dụng mã chập là bao nhiêu?",
+"ground_truth": "Tài liệu chỉ trình bày các kiến thức lý thuyết về mã chập chứ không cung cấp thông tin về chi phí xây dựng hệ thống.",
+"question_type": "unanswerable"
+}
+]

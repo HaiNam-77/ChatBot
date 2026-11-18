@@ -1,6 +1,20 @@
+# Môi trường ảo (cực nặng, không push)
 .venv/
+venv/
+# File chứa API KEY bí mật (TUYỆT ĐỐI KHÔNG PUSH)
 .env
+.env.*
+.env.local
+!.env.example
+# Python Cache
 __pycache__/
 *.pyc
+# Frontend Next.js (không push)
+node_modules/
+.next/
+out/
+# File nén & IDE
+*.zip
 .idea/
+.vscode/
 storage/
